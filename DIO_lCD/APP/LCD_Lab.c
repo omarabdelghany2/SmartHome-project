@@ -24,6 +24,8 @@ void LCD_lab()
 	LCD_WriteData('.');
 	LCD_WriteData('.');
 	LCD_WriteData('.');
+	LCD_WriteData('5');
+	
 	_delay_ms(2000);
 	LCD_WriteCmd(0x01);	
 	}
