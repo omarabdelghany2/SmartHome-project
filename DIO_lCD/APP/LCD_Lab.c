@@ -1,4 +1,4 @@
-/*
+/* 
  * LCD_Lab.c
  *
  * Created: 6/27/2022 6:47:03 PM
@@ -10,23 +10,14 @@
 void LCD_lab()
 {
 	LCD_Intialize();
+	uint8 pattern []={0x0E,0x08,0x1E,0x00,0x04,0x04,0x04,0x04};
+
+	LCD_StoreCustomChr(pattern,0);
+	LCD_DisplayCustomchr(0,0,0);
+	
 	while(1)
 	{
-		
-	LCD_WriteData('M');
-	LCD_WriteData('A');
-	LCD_WriteData('R');
-	LCD_WriteData('K');
-	LCD_WriteData('I');
-	LCD_WriteData('Z');
-	LCD_WriteData('O');
-	LCD_WriteData('0');
-	LCD_WriteData('.');
-	LCD_WriteData('.');
-	LCD_WriteData('.');
-	LCD_WriteData('5');
+
 	
-	_delay_ms(2000);
-	LCD_WriteCmd(0x01);	
 	}
 }
