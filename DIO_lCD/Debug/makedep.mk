@@ -12,5 +12,7 @@ HAL\Seven_Segment\Seven_Segment.c
 
 main.c
 
+MCAL\ADC\ADC.c
+
 MCAL\DIO\DIO.c
 

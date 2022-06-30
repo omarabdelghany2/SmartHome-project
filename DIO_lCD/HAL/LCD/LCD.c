@@ -155,7 +155,7 @@ void LCD_StoreCustomChr(uint8*pattern , uint8 CGRAM_Index)
 	if(CGRAM_Index<8)
 	{
 	
-	address=CGRAM_Index*8;//every idex occupy 8 places 
+	address=CGRAM_Index*8;//every idex occupy 8 places OR 8 BYTES 
 	address=SetBIT(address,6);//set bit no 6 to tell LCD to go to CGRAM not DDRAM
 	LCD_WriteCmd(address);//Tell LCD
 		for(uint8 index=0;index<8;index++)//store the character

@@ -406,7 +406,7 @@ void LCD_StoreCustomChr(uint8*pattern , uint8 CGRAM_Index)
  30e:	90 f4       	brcc	.+36     	; 0x334 <LCD_StoreCustomChr+0x30>
 	{
 	
-	address=CGRAM_Index*8;//every idex occupy 8 places 
+	address=CGRAM_Index*8;//every idex occupy 8 places OR 8 BYTES 
  310:	86 2f       	mov	r24, r22
  312:	88 0f       	add	r24, r24
  314:	88 0f       	add	r24, r24
@@ -427,7 +427,7 @@ void LCD_StoreCustomChr(uint8*pattern , uint8 CGRAM_Index)
  32a:	0e 94 0f 01 	call	0x21e	; 0x21e <LCD_WriteData>
 	{
 	
-	address=CGRAM_Index*8;//every idex occupy 8 places 
+	address=CGRAM_Index*8;//every idex occupy 8 places OR 8 BYTES 
 	address=SetBIT(address,6);//set bit no 6 to tell LCD to go to CGRAM not DDRAM
 	LCD_WriteCmd(address);//Tell LCD
 		for(uint8 index=0;index<8;index++)//store the character
