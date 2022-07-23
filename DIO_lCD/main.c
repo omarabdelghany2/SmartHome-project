@@ -7,10 +7,11 @@
 #include "MCAL/DIO/DIO.h"
 #include "APP/Seven_Segment.h"
 #include "HAL/LCD/lCD.h"
+
 int main()
 {
-	LCD_lab();
 	
+	ADC_LAB();
 	while(1)
 	{
 		

@@ -61,7 +61,7 @@ void LCD_WriteCmd(uint8 Cmd)
 void LCD_Intialize()
 {
 	DIO_SetPortDirection(PORTA,Output);
-	DIO_SetPortDirection(PORTB,Output);
+	DIO_SetPortDirection(PORTB,Output);//for control pins
 	_delay_ms(30);
 	LCD_WriteCmd(0x20);///intialize orders
 	LCD_WriteCmd(0x20);

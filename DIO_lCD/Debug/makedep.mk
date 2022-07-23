@@ -2,6 +2,8 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+APP\ADC_LAB.c
+
 APP\LCD_Lab.c
 
 APP\Seven_Segment.c

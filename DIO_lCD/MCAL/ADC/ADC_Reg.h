@@ -14,7 +14,7 @@
 #define  ADCL_REG            *((volatile uint8*)0x24)
 #define  ADCSRA_REG				*((volatile uint8*)0x26)
 #define  ADCLH_REG				*((volatile uint16*)0x24)
-#define  SFIOR_REG				*((volatile uint16*)0x50)
+#define  SFIOR_REG				*((volatile uint8*)0x50)
 
 
 

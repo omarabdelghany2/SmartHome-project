@@ -8,6 +8,7 @@
 
 #ifndef ADC_CONFIG_H_
 #define ADC_CONFIG_H_
+#include "ADC_Types.h"
 /*
 *configure the voltage reference
 *Range:

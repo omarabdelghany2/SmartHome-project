@@ -16,8 +16,8 @@
 #define ADC_VOLTAGE_REF__2_56v		0b11000000
 
 //ADC MODE selectors //// BIT5 IN CONTROL REGISTER			ADATE
-#define ADC_MODE_AUTO_TRIGGER			0
-#define ADC_MODE_SINGLE_CONVERSION		1
+#define ADC_MODE_AUTO_TRIGGER			1
+#define ADC_MODE_SINGLE_CONVERSION		0
 
 //ADC ADJUST SELECTORS			///ADC MULTIPLEXER REGISTER ADMUX	ADLAR (BIT5)
 
@@ -44,7 +44,7 @@
 #define  ADC_AUTO_TRIG_SRC_TIMER1_COMP_msk			 0b01100000
 #define  ADC_AUTO_TRIG_SRC_TIMER1_OVF_msk			 0b10000000
 
-//ADC Mast to clear channel before channeling
+//ADC Mask to clear channel before channeling
 #define ADC_CHANNEL_SELECTOR_CLR_msk				 0b11100000
 
 

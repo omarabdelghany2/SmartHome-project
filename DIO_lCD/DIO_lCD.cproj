@@ -130,6 +130,9 @@
     <Folder Include="MCAL\ADC" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="APP\ADC_LAB.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="APP\LCD_Lab.c">
       <SubType>compile</SubType>
     </Compile>
