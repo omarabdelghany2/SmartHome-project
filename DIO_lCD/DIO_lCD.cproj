@@ -128,6 +128,7 @@
     <Folder Include="APP" />
     <Folder Include="MCAL\DIO" />
     <Folder Include="MCAL\ADC" />
+    <Folder Include="MCAL\EXTI" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="APP\ADC_LAB.c">
@@ -188,6 +189,21 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="MCAL\DIO\DIO_Types.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\EXTI\EXTI.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\EXTI\EXTI.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\EXTI\EXTI_Config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\EXTI\EXTI_Reg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\EXTI\EXTI_Types.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>

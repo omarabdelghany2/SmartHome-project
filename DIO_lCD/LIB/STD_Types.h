@@ -27,6 +27,7 @@ typedef enum
 	HIGH
 }STD_Value;
 
+ #define NULL 0
 
 
 #endif /* STD_TYPES_H_ */
