@@ -13,7 +13,7 @@
 #define	MCUCSR_REG		(*(volatile uint8*)0x54)
 #define	GICR_REG		(*(volatile uint8*)0x5B)
 #define	GIFR_REG		(*(volatile uint8*)0x5A)
-#define	SREG_REG		(*(volatile uint8*)0x5F)
+
 
 
 

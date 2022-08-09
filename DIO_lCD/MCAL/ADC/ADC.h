@@ -27,9 +27,19 @@ typedef enum
 	}ADC_Channel_Types;
 
 void ADC_Intialize();
+
 void ADC_StartConversion(ADC_Channel_Types ADC_channel);
+
 uint16 ADC_GetResult();
 
 
+
+////////////
+//ADC INTERRUPT ENABLE AND DISABLE
+void ADC_EnableInt();
+void ADC_DisableInt();
+
+void ADC_SetCallback(void(*CopyFuncPTR)(void));
+void __vector_16(void);
 
 #endif /* ADC_H_ */

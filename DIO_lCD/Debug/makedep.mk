@@ -2,7 +2,11 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+APP\ADC_INTERRUPT_LAB.c
+
 APP\ADC_LAB.c
+
+APP\EXTI_LAB.c
 
 APP\LCD_Lab.c
 
@@ -19,4 +23,8 @@ MCAL\ADC\ADC.c
 MCAL\DIO\DIO.c
 
 MCAL\EXTI\EXTI.c
+
+MCAL\GIE\GIE.c
+
+MCAL\TIMER\TIMER.c
 

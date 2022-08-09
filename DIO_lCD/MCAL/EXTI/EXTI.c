@@ -90,21 +90,14 @@ void EXTI_DisableInt0()
 
 
 
-void EXTI_Enable_Global_Interrupt()
-{
-	SetBIT(SREG_REG,7);
-	
-}
 
-void EXTI_Disable_Global_Interrupt()
-{
-	ClearBIT(SREG_REG,7);
-}
 
 void EXTI_SetCallback(void(*CopyFuncPTR)(void))
 {
 	CallBackPtr=CopyFuncPTR;
 }
+//this prototype to prevent compiler from optimization of this function
+void __vector_1(void) __attribute__((signal,used));
 void __vector_1(void)
 {
 	if(CallBackPtr!=NULL)

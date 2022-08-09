@@ -6,6 +6,12 @@
  */ 
 #include "ADC.h"
 #include "../../LIB/STD_Types.h"
+#include "../DIO/DIO_Types.h"
+#include "../DIO/DIO.h"
+
+
+static void(*ADC_CallBackPtr)(void)=NULL;
+
 
 void ADC_Intialize()
 
@@ -41,7 +47,7 @@ void ADC_Intialize()
 	///////////////////////////////////////////////*/*/////////////////////
 	
 	
-	// 4)CLEAR INTERTUPT FLAG
+	// 4)CLEAR INTERTUPT FLAG	
 	SetBIT(ADCSRA_REG,4); //note clearing the flag by setting ADIF TO one not zero hintttt
 	
 	////////////
@@ -55,14 +61,68 @@ void ADC_StartConversion(ADC_Channel_Types ADC_Channel)
 	///SELECT CHANNEL
 	ADMUX_REG &= ADC_CHANNEL_SELECTOR_CLR_msk;
 	ADMUX_REG |= ADC_Channel; 
+	
 	//START CONVERSION
 	SetBIT(ADCSRA_REG,6);
 }
 
 uint16 ADC_GetResult()
 {
+	
+	/*SINGLE CONVERSION GET RESULT FUNCTION
 	while(!GetBIT(ADCSRA_REG,4));//hint bit 4 updated after data is converted and upadted in register ADLH
 		SetBIT(ADCSRA_REG,4);
 		return(ADCLH_REG);
+	*/
+	
+	//THIS CODE FOR SINGLE AND AUTO TRIGGER FUNCTION
+	
+	
+	#if (ADC_MODE_SELECTOR==ADC_MODE_AUTO_TRIGGER)
+		return(ADCLH_REG);	
+	
+	#elif (ADC_MODE_SELECTOR==ADC_MODE_SINGLE_CONVERSION)
+		while(!GetBIT(ADCSRA_REG,4))
+			SetBIT(ADCSRA_REG,4);
+			return(ADCLH_REG);
+		
+	
+	#endif
+	
+}
+
+
+//ADC ENABLE AND DISABLE
+
+void ADC_EnableInt()
+{
+	SetBIT(ADCSRA_REG,3);
+}
+void ADC_DisableInt()
+{
+	ClearBIT(ADCSRA_REG,3);
+}
+
+//ADC INTERRUPT SETCALLBACK FUNCTION
+
+
+void ADC_SetCallback(void(*CopyFuncPTR)(void))
+{
+	ADC_CallBackPtr=CopyFuncPTR;
+}
+
+//THIS SENTENCE IS SPECIAL TO ADC_MAX_NUMBER_OF_STEPS	KE PROCESSEOR NOT TO OPTIMIZE THE CODE AND DELETE THIS FUCNTION
+void __vector_16(void) __attribute__((signal , used));
+
+void __vector_16(void)
+{
+	
+	if(ADC_CallBackPtr!=NULL)
+	{
+		
+		ADC_CallBackPtr();
+		
+	}
+		
 	
 }

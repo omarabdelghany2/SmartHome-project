@@ -26,9 +26,7 @@ void EXTI_EnableInt0();
 void EXTI_DisableInt0();
 
 
-/*enable and disable of global interrupt*/
-void EXTI_Enable_Global_Interrupt();
-void EXTI_Disable_Global_Interrupt();
+
 
 
 /*call back function */

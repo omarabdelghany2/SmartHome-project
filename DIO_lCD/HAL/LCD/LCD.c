@@ -32,12 +32,12 @@ void LCD_WriteCmd(uint8 Cmd)
 	
 	//delay and reading by down Edge
 	
-	//
-	DIO_SetPinValue(PORTB,PIN3,HIGH);
-	_delay_ms(1);                       //delay for reading block
-	DIO_SetPinValue(PORTB,PIN3,LOW);
+					//
+					DIO_SetPinValue(PORTB,PIN3,HIGH);
+					_delay_ms(1);                       //delay for reading block
+					DIO_SetPinValue(PORTB,PIN3,LOW);
 	
-	//
+					//
 	if(InitStepFinished)
 	{
 		
@@ -48,12 +48,12 @@ void LCD_WriteCmd(uint8 Cmd)
 
 		//delay and reading by down Edge
 		
-		//
-		DIO_SetPinValue(PORTB,PIN3,HIGH);
-		_delay_ms(1);                       //delay for reading block
-		DIO_SetPinValue(PORTB,PIN3,LOW);
+					//
+					DIO_SetPinValue(PORTB,PIN3,HIGH);
+					_delay_ms(1);                       //delay for reading block
+					DIO_SetPinValue(PORTB,PIN3,LOW);
 		
-		//
+					//
 	}
 	
 	

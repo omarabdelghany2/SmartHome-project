@@ -18,8 +18,6 @@
 	*/
 #define ADC_VOLTAGE_REF_SELECTOR_msk        ADC_VOLTAGE_REF__AVCC	
 
-#define ADC_VOLTAGE_REF_mv					5000
-#define ADC_MAX_NUMBER_OF_STEPS				1024
 
 
 /*CONFIGURE the ADC MODE

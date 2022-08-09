@@ -26,7 +26,7 @@ typedef enum
 
 typedef enum
 {
-	PIN0,
+	PIN0,//0
 	PIN1,
 	PIN2,
 	PIN3,
@@ -36,7 +36,5 @@ typedef enum
 	PIN7	
 	}DIO_PIN_ID;
 	
-
-
 	
 #endif /* DIO_TYPES_H_ */
