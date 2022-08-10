@@ -8,13 +8,14 @@
 #include "APP/Seven_Segment.h"
 #include "HAL/LCD/lCD.h"
 #include "APP/ADC_INTERRUPT_LAB.h"
-
+#include "APP/Timer0_overflow_interrupt_LAB.h"
 int main()
 {
 	
 	//ADC_LAB();
 	//Sev_Seg(11,0.1);
-	ADC_interrupt_Lab();
+	//ADC_interrupt_Lab();
+	Timer_Lab();
 	while(1)
 	{
 		

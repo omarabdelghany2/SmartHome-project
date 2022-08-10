@@ -154,6 +154,12 @@
     <Compile Include="APP\Seven_Segment.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="APP\Timer0_overflow_interrupt_LAB.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APP\Timer0_overflow_interrupt_LAB.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\LCD\LCD.c">
       <SubType>compile</SubType>
     </Compile>

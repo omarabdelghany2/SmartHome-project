@@ -16,5 +16,9 @@
 void Timer_intialize();
 
 
+void TIMER_SetCallback(void(*CopyFuncPTR)(void));
+void __vector_11(void);
+
+
 
 #endif /* TIMER_H_ */

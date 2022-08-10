@@ -6,7 +6,7 @@
  */ 
 #include "TIMER.h"
 
-
+static void(*Timer_CallBackPtr)(void)=NULL;
 void Timer_intialize()
 {
 /*STEPS IN INTIALIZE
@@ -25,4 +25,15 @@ void Timer_intialize()
 	TIMSK_REG||TIMER_OVERFLOW_INTERRUPT_STATUS	;
 	TIMSK_REG||TIMER_CompareMatch_INTERRUPT_STATUS;
 	
+}
+
+void TIMER_SetCallback(void(*CopyFuncPTR)(void))
+{
+	Timer_CallBackPtr=CopyFuncPTR;
+}
+void __vector_11(void) __attribute__((signal , used));
+void __vector_11(void)
+{
+	if(Timer_CallBackPtr!=NULL)
+		Timer_CallBackPtr();
 }

@@ -50,10 +50,10 @@
 #define TIMER_PHASEPWM_SIT(OC0)								00110000
 
 //ENABLE INTERRUPT for OUTPUT COMPARE MATCH 
-#define TIMER_Compare_Interrupt_Enable_msk					10000000
+#define TIMER_Compare_Interrupt_Enable_msk					00000010
 #define TIMER_Compare_Interrupt_Disable_msk					00000000
 //ENABLE INTERRUPT for OVERFLOW 
-#define TIMER_OVERFLOW_Interrupt_Enable_msk					01000000
+#define TIMER_OVERFLOW_Interrupt_Enable_msk					00000001
 #define TIMER_OVERFLOW_Interrupt_Disable_msk				00000000
 
 
