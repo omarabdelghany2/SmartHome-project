@@ -21,37 +21,37 @@ static uint8 InitStepFinished = 0;
 
 void LCD_WriteCmd(uint8 Cmd)
 {
-	DIO_SetPinValue(PORTB,PIN1,LOW);//RS and R/W should be low to write command
-	DIO_SetPinValue(PORTB,PIN2,LOW);
+	DIO_SetPinValue(PORTC,PIN0,LOW);//RS and R/W should be low to write command
+	DIO_SetPinValue(PORTC,PIN1,LOW);
 	
 	
-	DIO_SetPinValue(PORTA,PIN4,GetBIT(Cmd,4));
-	DIO_SetPinValue(PORTA,PIN5,GetBIT(Cmd,5));
-	DIO_SetPinValue(PORTA,PIN6,GetBIT(Cmd,6));
-	DIO_SetPinValue(PORTA,PIN7,GetBIT(Cmd,7));
+	DIO_SetPinValue(PORTC,PIN4,GetBIT(Cmd,4));
+	DIO_SetPinValue(PORTC,PIN5,GetBIT(Cmd,5));
+	DIO_SetPinValue(PORTC,PIN6,GetBIT(Cmd,6));
+	DIO_SetPinValue(PORTC,PIN7,GetBIT(Cmd,7));
 	
 	//delay and reading by down Edge
 	
 					//
-					DIO_SetPinValue(PORTB,PIN3,HIGH);
+					DIO_SetPinValue(PORTC,PIN2,HIGH);
 					_delay_ms(1);                       //delay for reading block
-					DIO_SetPinValue(PORTB,PIN3,LOW);
+					DIO_SetPinValue(PORTC,PIN2,LOW);
 	
 					//
 	if(InitStepFinished)
 	{
 		
-		DIO_SetPinValue(PORTA,PIN4,GetBIT(Cmd,0));
-		DIO_SetPinValue(PORTA,PIN5,GetBIT(Cmd,1));
-		DIO_SetPinValue(PORTA,PIN6,GetBIT(Cmd,2));
-		DIO_SetPinValue(PORTA,PIN7,GetBIT(Cmd,3));
+		DIO_SetPinValue(PORTC,PIN4,GetBIT(Cmd,0));
+		DIO_SetPinValue(PORTC,PIN5,GetBIT(Cmd,1));
+		DIO_SetPinValue(PORTC,PIN6,GetBIT(Cmd,2));
+		DIO_SetPinValue(PORTC,PIN7,GetBIT(Cmd,3));
 
 		//delay and reading by down Edge
 		
 					//
-					DIO_SetPinValue(PORTB,PIN3,HIGH);
+					DIO_SetPinValue(PORTC,PIN2,HIGH);
 					_delay_ms(1);                       //delay for reading block
-					DIO_SetPinValue(PORTB,PIN3,LOW);
+					DIO_SetPinValue(PORTC,PIN2,LOW);
 		
 					//
 	}
@@ -60,8 +60,7 @@ void LCD_WriteCmd(uint8 Cmd)
 }
 void LCD_Intialize()
 {
-	DIO_SetPortDirection(PORTA,Output);
-	DIO_SetPortDirection(PORTB,Output);//for control pins
+	DIO_SetPortDirection(PORTC,Output);
 	_delay_ms(30);
 	LCD_WriteCmd(0x20);///intialize orders
 	LCD_WriteCmd(0x20);
@@ -80,36 +79,36 @@ void LCD_Intialize()
 
 void LCD_WriteData(uint8 Data)
 {
-		DIO_SetPinValue(PORTB,PIN1,HIGH);//RS and R/W should be high and  low to write Data
-		DIO_SetPinValue(PORTB,PIN2,LOW);
+		DIO_SetPinValue(PORTC,PIN0,HIGH);//RS and R/W should be high and  low to write Data
+		DIO_SetPinValue(PORTC,PIN1,LOW);
 	
 	
-		DIO_SetPinValue(PORTA,PIN4,GetBIT(Data,4));
-		DIO_SetPinValue(PORTA,PIN5,GetBIT(Data,5));
-		DIO_SetPinValue(PORTA,PIN6,GetBIT(Data,6));
-		DIO_SetPinValue(PORTA,PIN7,GetBIT(Data,7));
+		DIO_SetPinValue(PORTC,PIN4,GetBIT(Data,4));
+		DIO_SetPinValue(PORTC,PIN5,GetBIT(Data,5));
+		DIO_SetPinValue(PORTC,PIN6,GetBIT(Data,6));
+		DIO_SetPinValue(PORTC,PIN7,GetBIT(Data,7));
 	
 							//delay and reading by down Edge
 	
 							//
-							DIO_SetPinValue(PORTB,PIN3,HIGH);
+							DIO_SetPinValue(PORTC,PIN2,HIGH);
 							_delay_ms(1);                       //delay for reading block
-							DIO_SetPinValue(PORTB,PIN3,LOW);
+							DIO_SetPinValue(PORTC,PIN2,LOW);
 	
 							//
 	
 		
-		DIO_SetPinValue(PORTA,PIN4,GetBIT(Data,0));
-		DIO_SetPinValue(PORTA,PIN5,GetBIT(Data,1));
-		DIO_SetPinValue(PORTA,PIN6,GetBIT(Data,2));
-		DIO_SetPinValue(PORTA,PIN7,GetBIT(Data,3));
+		DIO_SetPinValue(PORTC,PIN4,GetBIT(Data,0));
+		DIO_SetPinValue(PORTC,PIN5,GetBIT(Data,1));
+		DIO_SetPinValue(PORTC,PIN6,GetBIT(Data,2));
+		DIO_SetPinValue(PORTC,PIN7,GetBIT(Data,3));
 
 							//delay and reading by down Edge
 		
 							//
-							DIO_SetPinValue(PORTB,PIN3,HIGH);
+							DIO_SetPinValue(PORTC,PIN2,HIGH);
 							_delay_ms(1);                       //delay for reading block
-							DIO_SetPinValue(PORTB,PIN3,LOW);
+							DIO_SetPinValue(PORTC,PIN2,LOW);
 		
 							//
 	
@@ -125,7 +124,7 @@ void LCD_GoToPos(uint8 Row,uint8 Column)
 		LCD_WriteCmd(Address);
 	}
 }
-void LCD_WriteString(uint8 *Str,uint8 Row,uint8 Column)
+void LCD_WriteString(char *Str,uint8 Row,uint8 Column)
 {	uint8 Index=0;//for the curser indexing
 	uint8 Line0=0;//for row indexing
 	LCD_GoToPos(Row,Column);

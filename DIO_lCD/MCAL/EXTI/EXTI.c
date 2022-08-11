@@ -5,6 +5,7 @@
  *  Author: pc
  */ 
 #include "EXTI.h"
+void ( *EXTI_CallBackPtr ) (void)=NULL;
 void EXTI_Intialization()
 {
 	ClearBIT(MCUCR_REG,0);
@@ -94,12 +95,12 @@ void EXTI_DisableInt0()
 
 void EXTI_SetCallback(void(*CopyFuncPTR)(void))
 {
-	CallBackPtr=CopyFuncPTR;
+	EXTI_CallBackPtr=CopyFuncPTR;
 }
 //this prototype to prevent compiler from optimization of this function
 void __vector_1(void) __attribute__((signal,used));
 void __vector_1(void)
 {
-	if(CallBackPtr!=NULL)
-		CallBackPtr();
+	if(EXTI_CallBackPtr!=NULL)
+		EXTI_CallBackPtr();
 }

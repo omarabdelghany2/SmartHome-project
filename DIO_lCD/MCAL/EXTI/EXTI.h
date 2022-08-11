@@ -31,7 +31,7 @@ void EXTI_DisableInt0();
 
 /*call back function */
 
-void ( *CallBackPtr ) (void)=NULL;
+
 void EXTI_SetCallback(void(*CopyFuncPTR)(void));
 
 void __vector_1(void);

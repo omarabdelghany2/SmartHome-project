@@ -4,20 +4,20 @@
  * Created: 6/27/2022 10:59:34 AM
  *  Author: pc
  */ 
-#include "MCAL/DIO/DIO.h"
-#include "APP/Seven_Segment.h"
-#include "HAL/LCD/lCD.h"
-#include "APP/ADC_INTERRUPT_LAB.h"
-#include "APP/Timer0_overflow_interrupt_LAB.h"
+
+#include "APP/Traffic_Light_udacity.h"
 int main()
 {
 	
 	//ADC_LAB();
 	//Sev_Seg(11,0.1);
 	//ADC_interrupt_Lab();
-	Timer_Lab();
+	//Timer_Lab();
+	//Timer_intialize();
+	start_Traffic_light();
+	
 	while(1)
 	{
-		
+	
 	}
 }

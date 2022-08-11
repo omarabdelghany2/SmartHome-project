@@ -160,6 +160,12 @@
     <Compile Include="APP\Timer0_overflow_interrupt_LAB.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="APP\Traffic_Light_udacity.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APP\Traffic_Light_udacity.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\LCD\LCD.c">
       <SubType>compile</SubType>
     </Compile>

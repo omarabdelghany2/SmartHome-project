@@ -18,7 +18,8 @@ void Timer_intialize();
 
 void TIMER_SetCallback(void(*CopyFuncPTR)(void));
 void __vector_11(void);
-
+void TIMER_delay(float delay);
+void TIMER0_ISR();
 
 
 #endif /* TIMER_H_ */

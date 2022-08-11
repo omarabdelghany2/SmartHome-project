@@ -24,7 +24,7 @@
 	 TIMER_CLOCK_SELECT_External_RisingEdge_On(T0)		
 
 */
-#define TIMER_CLK_SELECTOR						 TIMER_CLOCK_SELECT_256_Prescaling
+#define TIMER_CLK_SELECTOR						 TIMER_CLOCK_SELECT_1024_Prescaling	
 
 /*select the wave form from the next choices
 

@@ -14,6 +14,8 @@ APP\Seven_Segment.c
 
 APP\Timer0_overflow_interrupt_LAB.c
 
+APP\Traffic_Light_udacity.c
+
 HAL\LCD\LCD.c
 
 HAL\Seven_Segment\Seven_Segment.c
