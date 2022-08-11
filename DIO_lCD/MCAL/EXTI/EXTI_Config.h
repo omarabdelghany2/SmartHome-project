@@ -15,7 +15,7 @@
 * EXTI_Falling_Edge			 
 * EXTI_Rising_Edge			 
 */
-#define  EXT0_MODE  EXTI_Falling_Edge	
+#define  EXT0_MODE   EXTI_Falling_Edge		
 
 
 
