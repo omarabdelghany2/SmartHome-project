@@ -1,7 +1,6 @@
 APP/Traffic_Light_udacity.d APP/Traffic_Light_udacity.o: \
  ../APP/Traffic_Light_udacity.c ../APP/Traffic_Light_udacity.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdbool.h \
- ../APP/../HAL/LCD/LCD.h ../APP/../HAL/LCD/../../LIB/STD_Types.h \
  ../APP/../LIB/STD_Types.h ../APP/../MCAL/DIO/DIO_Types.h \
  ../APP/../MCAL/TIMER/TIMER.h ../APP/../MCAL/TIMER/TIMER_Config.h \
  ../APP/../MCAL/TIMER/TIMER_Types.h ../APP/../MCAL/TIMER/TIMER_Reg.h \
@@ -19,10 +18,6 @@ APP/Traffic_Light_udacity.d APP/Traffic_Light_udacity.o: \
 ../APP/Traffic_Light_udacity.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdbool.h:
-
-../APP/../HAL/LCD/LCD.h:
-
-../APP/../HAL/LCD/../../LIB/STD_Types.h:
 
 ../APP/../LIB/STD_Types.h:
 
