@@ -5,13 +5,14 @@
  *  Author: pc
  */ 
 
-#include "APP/Traffic_Light_udacity.h"
+#include "APP/UART_ECHO_TRY.h"
 int main()
 {
 
-	start_Traffic_light();
+	UART_Start();
+	
 	while(1)
 	{
-	
+		
 	}
 }

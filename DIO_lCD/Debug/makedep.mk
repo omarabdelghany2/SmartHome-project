@@ -16,6 +16,8 @@ APP\Timer0_overflow_interrupt_LAB.c
 
 APP\Traffic_Light_udacity.c
 
+APP\UART_ECHO_TRY.c
+
 HAL\LCD\LCD.c
 
 HAL\Seven_Segment\Seven_Segment.c
@@ -31,4 +33,6 @@ MCAL\EXTI\EXTI.c
 MCAL\GIE\GIE.c
 
 MCAL\TIMER\TIMER.c
+
+MCAL\UART\UART.c
 

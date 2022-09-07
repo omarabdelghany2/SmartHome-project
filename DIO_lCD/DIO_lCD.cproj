@@ -40,6 +40,19 @@
         </dependencies>
       </framework-data>
     </AsfFrameworkConfig>
+    <avrtool>com.atmel.avrdbg.tool.simulator</avrtool>
+    <avrtoolserialnumber />
+    <avrdeviceexpectedsignature>0x1E9502</avrdeviceexpectedsignature>
+    <com_atmel_avrdbg_tool_simulator>
+      <ToolOptions xmlns="">
+        <InterfaceProperties>
+        </InterfaceProperties>
+      </ToolOptions>
+      <ToolType xmlns="">com.atmel.avrdbg.tool.simulator</ToolType>
+      <ToolNumber xmlns="">
+      </ToolNumber>
+      <ToolName xmlns="">Simulator</ToolName>
+    </com_atmel_avrdbg_tool_simulator>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
@@ -130,6 +143,7 @@
     <Folder Include="MCAL\ADC" />
     <Folder Include="MCAL\EXTI" />
     <Folder Include="MCAL\GIE" />
+    <Folder Include="MCAL\UART" />
     <Folder Include="MCAL\TIMER" />
   </ItemGroup>
   <ItemGroup>
@@ -164,6 +178,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="APP\Traffic_Light_udacity.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APP\UART_ECHO_TRY.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APP\UART_ECHO_TRY.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="HAL\LCD\LCD.c">
@@ -254,6 +274,21 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="MCAL\TIMER\TIMER_Types.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\UART\UART.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\UART\UART.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\UART\UART_Config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\UART\UART_REG.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\UART\UART_Types.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>

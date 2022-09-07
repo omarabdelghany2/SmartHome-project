@@ -10,51 +10,51 @@
 #define TIMER_TYPES_H_
 
 //clockSource selectors and the clearing mask//bitCS2->CS0 On register TCCR0_REG
-#define TIMER_CLOCK_SELECT_clr_msk							11111000
-#define TIMER_CLOCK_SELECT_NoClock_Source					00000000
-#define TIMER_CLOCK_SELECT_No_Prescaling					00000001
-#define TIMER_CLOCK_SELECT_8_Prescaling						00000010
-#define TIMER_CLOCK_SELECT_64_Prescaling					00000010
-#define TIMER_CLOCK_SELECT_128_Prescaling					00000011
-#define TIMER_CLOCK_SELECT_256_Prescaling					00000100
-#define TIMER_CLOCK_SELECT_1024_Prescaling					00000101
-#define TIMER_CLOCK_SELECT_External_FallingEdge_On(T0)		00000110
-#define TIMER_CLOCK_SELECT_External_RisingEdge_On(T0)		00000111
+#define TIMER_CLOCK_SELECT_clr_msk							0b11111000	
+#define TIMER_CLOCK_SELECT_NoClock_Source					0b00000000
+#define TIMER_CLOCK_SELECT_No_Prescaling					0b00000001			
+#define TIMER_CLOCK_SELECT_8_Prescaling					    0b00000010				
+#define TIMER_CLOCK_SELECT_64_Prescaling					0b00000010				
+#define TIMER_CLOCK_SELECT_128_Prescaling					0b00000011
+#define TIMER_CLOCK_SELECT_256_Prescaling					0b00000100
+#define TIMER_CLOCK_SELECT_1024_Prescaling					0b00000101
+#define TIMER_CLOCK_SELECT_External_FallingEdge_On(T0)		0b00000110
+#define TIMER_CLOCK_SELECT_External_RisingEdge_On(T0)		0b00000111
 
 //SELCTORS FOR WAVE_FORM_GENERATION_MODE//BIT6 AND BIT3 IN REGISTER TCCR0_REG
-#define TIMER_WAVE_FORM_MODE_clr_msk						10110111
-#define TIMER_WAVE_FORM_MODE_Normal							00000000
-#define TIMER_WAVE_FORM_MODE_PhaseCorrect					00001000
-#define TIMER_WAVE_FORM_MODE_CTC							01000000
-#define TIMER_WAVE_FORM_MODE_FASTPWM						01001000
+#define TIMER_WAVE_FORM_MODE_clr_msk						0b10110111
+#define TIMER_WAVE_FORM_MODE_Normal							0b00000000
+#define TIMER_WAVE_FORM_MODE_PhaseCorrect					0b00001000
+#define TIMER_WAVE_FORM_MODE_CTC							0b01000000
+#define TIMER_WAVE_FORM_MODE_FASTPWM						0b01001000
 
 //Compare OUTPUT MODE IN NO PWM MODE BIT COM01->COM00 on register TCCR0_REG
-#define TIMER_NOPWM_clr_msk									11001111
-#define TIMER_NOPWM_NORMAL_OPERATION						00000000
-#define TIMER_NOPWM_Toggle(OC0)								00010000
-#define TIMER_NOPWM_SIT(OC0)								00100000
-#define TIMER_NOPWM_Clr(OC0)								00110000
+#define TIMER_NOPWM_clr_msk									0b11001111
+#define TIMER_NOPWM_NORMAL_OPERATION						0b00000000
+#define TIMER_NOPWM_Toggle(OC0)								0b00010000
+#define TIMER_NOPWM_SIT(OC0)								0b00100000
+#define TIMER_NOPWM_Clr(OC0)								0b00110000
 
 //COMPARE OUTPUT MODE IN FAST PWM MODE BIT	COM01->COM00 on register TCCR0_REG
 
-#define TIMER_FASTPWM_clr_msk								11001111
-#define TIMER_FASTPWM_NORMAL_OPERATION						00000000
-#define TIMER_FASTPWM_CLR(OC0)								00100000
-#define TIMER_FASTPWM_SIT(OC0)								00110000
+#define TIMER_FASTPWM_clr_msk								0b11001111
+#define TIMER_FASTPWM_NORMAL_OPERATION						0b00000000
+#define TIMER_FASTPWM_CLR(OC0)							    0b00100000
+#define TIMER_FASTPWM_SIT(OC0)							    0b00110000
 
 //COMPARE OUTPUT MODE IN PHASE PWM MODE BIT	COM01->COM00 on register TCCR0_REG
 
-#define TIMER_PHASEPWM_clr_msk								11001111
-#define TIMER_PHASEWM_NORMAL_OPERATION						00000000
-#define TIMER_PHASEPWM_CLR(OC0)								00100000
-#define TIMER_PHASEPWM_SIT(OC0)								00110000
+#define TIMER_PHASEPWM_clr_msk								0b11001111
+#define TIMER_PHASEWM_NORMAL_OPERATION						0b00000000
+#define TIMER_PHASEPWM_CLR(OC0)								0b00100000
+#define TIMER_PHASEPWM_SIT(OC0)								0b00110000
 
 //ENABLE INTERRUPT for OUTPUT COMPARE MATCH 
-#define TIMER_Compare_Interrupt_Enable_msk					00000010
-#define TIMER_Compare_Interrupt_Disable_msk					00000000
+#define TIMER_Compare_Interrupt_Enable_msk					0b00000010
+#define TIMER_Compare_Interrupt_Disable_msk					0b00000000
 //ENABLE INTERRUPT for OVERFLOW 
-#define TIMER_OVERFLOW_Interrupt_Enable_msk					00000001
-#define TIMER_OVERFLOW_Interrupt_Disable_msk				00000000
+#define TIMER_OVERFLOW_Interrupt_Enable_msk					0b00000001
+#define TIMER_OVERFLOW_Interrupt_Disable_msk				0b00000000
 
 
 #endif /* TIMER_TYPES_H_ */
