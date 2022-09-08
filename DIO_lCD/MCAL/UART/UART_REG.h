@@ -9,12 +9,12 @@
 #ifndef UART_REG_H_
 #define UART_REG_H_
 
-#define UDR_REG			*((volatile uint8*)0x2C)  
-#define UCSRA_REG		*((volatile uint8*)0x2B)
-#define UCSRB_REG		*((volatile uint8*)0x2A)
-#define UCSRC_REG		*((volatile uint8*)0x40)
-#define UBRRH_REG		*((volatile uint8*)0x40)
-#define UBRRL_REG		*((volatile uint8*)0x29)
+#define UDR_REG			(*(volatile uint8*)0x2C)  
+#define UCSRA_REG		(*(volatile uint8*)0x2B)
+#define UCSRB_REG		(*(volatile uint8*)0x2A)
+#define UCSRC_REG		(*(volatile uint8*)0x40)
+#define UBRRH_REG		(*(volatile uint8*)0x40)
+#define UBRRL_REG		(*(volatile uint8*)0x29)
 
 
 

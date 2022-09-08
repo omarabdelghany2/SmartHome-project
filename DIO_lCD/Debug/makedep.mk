@@ -12,6 +12,8 @@ APP\LCD_Lab.c
 
 APP\Seven_Segment.c
 
+APP\SPI_TRY.c
+
 APP\Timer0_overflow_interrupt_LAB.c
 
 APP\Traffic_Light_udacity.c
@@ -31,6 +33,8 @@ MCAL\DIO\DIO.c
 MCAL\EXTI\EXTI.c
 
 MCAL\GIE\GIE.c
+
+MCAL\SPI\SPI.c
 
 MCAL\TIMER\TIMER.c
 

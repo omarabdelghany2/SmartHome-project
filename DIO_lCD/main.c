@@ -5,11 +5,12 @@
  *  Author: pc
  */ 
 
-#include "APP/UART_ECHO_TRY.h"
+#include "APP/SPI_TRY.h"
+
 int main()
 {
 
-	UART_Start();
+	SPI_try();
 	
 	while(1)
 	{

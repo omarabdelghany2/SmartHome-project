@@ -143,6 +143,7 @@
     <Folder Include="MCAL\ADC" />
     <Folder Include="MCAL\EXTI" />
     <Folder Include="MCAL\GIE" />
+    <Folder Include="MCAL\SPI" />
     <Folder Include="MCAL\UART" />
     <Folder Include="MCAL\TIMER" />
   </ItemGroup>
@@ -166,6 +167,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="APP\Seven_Segment.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APP\SPI_TRY.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APP\SPI_TRY.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="APP\Timer0_overflow_interrupt_LAB.c">
@@ -259,6 +266,21 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="MCAL\GIE\GIE_Types.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\SPI\SPI.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\SPI\SPI.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\SPI\SPI_Config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\SPI\SPI_REG.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\SPI\SPI_Types.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="MCAL\TIMER\TIMER_Config.h">

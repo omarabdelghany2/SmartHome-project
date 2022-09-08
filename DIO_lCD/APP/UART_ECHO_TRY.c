@@ -6,12 +6,13 @@
  */ 
 #include "UART_ECHO_TRY.h"
 
+
 #include "../MCAL/TIMER/TIMER.h"
 void UART_Start()
 {	
 	UART_Intialize();
 	uint8 received=0;
-	DIO_SetPortDirection(PORTA,Output);
+	
 	while(1)
 	{
 		

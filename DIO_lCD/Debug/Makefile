@@ -43,6 +43,7 @@ SUBDIRS :=  \
 ../MCAL/ADC \
 ../MCAL/EXTI \
 ../MCAL/GIE \
+../MCAL/SPI \
 ../MCAL/UART \
 ../MCAL/TIMER
 
@@ -54,6 +55,7 @@ C_SRCS +=  \
 ../APP/EXTI_LAB.c \
 ../APP/LCD_Lab.c \
 ../APP/Seven_Segment.c \
+../APP/SPI_TRY.c \
 ../APP/Timer0_overflow_interrupt_LAB.c \
 ../APP/Traffic_Light_udacity.c \
 ../APP/UART_ECHO_TRY.c \
@@ -64,6 +66,7 @@ C_SRCS +=  \
 ../MCAL/DIO/DIO.c \
 ../MCAL/EXTI/EXTI.c \
 ../MCAL/GIE/GIE.c \
+../MCAL/SPI/SPI.c \
 ../MCAL/TIMER/TIMER.c \
 ../MCAL/UART/UART.c
 
@@ -80,6 +83,7 @@ APP/ADC_LAB.o \
 APP/EXTI_LAB.o \
 APP/LCD_Lab.o \
 APP/Seven_Segment.o \
+APP/SPI_TRY.o \
 APP/Timer0_overflow_interrupt_LAB.o \
 APP/Traffic_Light_udacity.o \
 APP/UART_ECHO_TRY.o \
@@ -90,6 +94,7 @@ MCAL/ADC/ADC.o \
 MCAL/DIO/DIO.o \
 MCAL/EXTI/EXTI.o \
 MCAL/GIE/GIE.o \
+MCAL/SPI/SPI.o \
 MCAL/TIMER/TIMER.o \
 MCAL/UART/UART.o
 
@@ -99,6 +104,7 @@ APP/ADC_LAB.o \
 APP/EXTI_LAB.o \
 APP/LCD_Lab.o \
 APP/Seven_Segment.o \
+APP/SPI_TRY.o \
 APP/Timer0_overflow_interrupt_LAB.o \
 APP/Traffic_Light_udacity.o \
 APP/UART_ECHO_TRY.o \
@@ -109,6 +115,7 @@ MCAL/ADC/ADC.o \
 MCAL/DIO/DIO.o \
 MCAL/EXTI/EXTI.o \
 MCAL/GIE/GIE.o \
+MCAL/SPI/SPI.o \
 MCAL/TIMER/TIMER.o \
 MCAL/UART/UART.o
 
@@ -118,6 +125,7 @@ APP/ADC_LAB.d \
 APP/EXTI_LAB.d \
 APP/LCD_Lab.d \
 APP/Seven_Segment.d \
+APP/SPI_TRY.d \
 APP/Timer0_overflow_interrupt_LAB.d \
 APP/Traffic_Light_udacity.d \
 APP/UART_ECHO_TRY.d \
@@ -128,6 +136,7 @@ MCAL/ADC/ADC.d \
 MCAL/DIO/DIO.d \
 MCAL/EXTI/EXTI.d \
 MCAL/GIE/GIE.d \
+MCAL/SPI/SPI.d \
 MCAL/TIMER/TIMER.d \
 MCAL/UART/UART.d
 
@@ -137,6 +146,7 @@ APP/ADC_LAB.d \
 APP/EXTI_LAB.d \
 APP/LCD_Lab.d \
 APP/Seven_Segment.d \
+APP/SPI_TRY.d \
 APP/Timer0_overflow_interrupt_LAB.d \
 APP/Traffic_Light_udacity.d \
 APP/UART_ECHO_TRY.d \
@@ -147,6 +157,7 @@ MCAL/ADC/ADC.d \
 MCAL/DIO/DIO.d \
 MCAL/EXTI/EXTI.d \
 MCAL/GIE/GIE.d \
+MCAL/SPI/SPI.d \
 MCAL/TIMER/TIMER.d \
 MCAL/UART/UART.d
 
@@ -193,6 +204,13 @@ APP/LCD_Lab.o: ../APP/LCD_Lab.c
 	
 
 APP/Seven_Segment.o: ../APP/Seven_Segment.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+APP/SPI_TRY.o: ../APP/SPI_TRY.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
@@ -263,6 +281,13 @@ MCAL/EXTI/EXTI.o: ../MCAL/EXTI/EXTI.c
 	
 
 MCAL/GIE/GIE.o: ../MCAL/GIE/GIE.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+MCAL/SPI/SPI.o: ../MCAL/SPI/SPI.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
