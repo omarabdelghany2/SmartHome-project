@@ -46,7 +46,7 @@ void TIMER_delay(float delay)
 {
 	Global_Interrupt_Enable();
 	TCCR0_REG|=TIMER_CLK_SELECTOR;
-	delay*=2000;
+	delay*=2*1.5;
 	while(overflow<delay)
 	{
 		

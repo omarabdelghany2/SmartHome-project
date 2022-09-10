@@ -57,3 +57,33 @@
 	 uint8 recieved=SPDR_REG;
 	 return(recieved);
   }
+  
+  void SPI_Slave_Intialize()
+  {
+	  //1) set MOSI ,SCK,SS as input pins and MISO to output pin
+	   DIO_SetPinDirection(PORTB,4,Input);//SS
+	   DIO_SetPinDirection(PORTB,5,Input);//MOSI
+	   DIO_SetPinDirection(PORTB,7,Input);//SCK
+	   DIO_SetPinDirection(PORTB,6,Output);//MISO
+	   
+	   
+	   //2)enable SPI
+	   SetBIT(SPCR_REG,6);
+	   //3) enable SPI in slave mood
+	   SPCR_REG |= SPI_Slave_Mode;
+	   	//4) Choose prescaling
+	   	SPCR_REG |= SPI_Prescaling_Selector;
+	   	//5) choose speed
+	   	SPSR_REG |= SPI_Speed_Selector;
+  }
+   uint8 SPI_Slave_Recieve()
+   {
+	   //1)sET DUMMY VALUE
+	   SPDR_REG=0xFF;
+	   //2)WAIT UNTIL RECIEVE COMPLETE
+		while(!GetBIT(SPSR_REG,7));
+		uint8 flusher =SPDR_REG;
+		return(flusher);
+   }
+   
+    
