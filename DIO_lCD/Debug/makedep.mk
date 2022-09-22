@@ -20,6 +20,8 @@ APP\Traffic_Light_udacity.c
 
 APP\UART_ECHO_TRY.c
 
+HAL\KeyPad\KeyPad.c
+
 HAL\LCD\LCD.c
 
 HAL\Seven_Segment\Seven_Segment.c
@@ -30,9 +32,13 @@ MCAL\ADC\ADC.c
 
 MCAL\DIO\DIO.c
 
+MCAL\EEPROM\EEPROM.c
+
 MCAL\EXTI\EXTI.c
 
 MCAL\GIE\GIE.c
+
+MCAL\I2C\I2C.c
 
 MCAL\SPI\SPI.c
 

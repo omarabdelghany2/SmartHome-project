@@ -134,6 +134,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="HAL\LCD" />
+    <Folder Include="HAL\KeyPad" />
     <Folder Include="HAL\Seven_Segment" />
     <Folder Include="MCAL" />
     <Folder Include="HAL" />
@@ -143,6 +144,8 @@
     <Folder Include="MCAL\ADC" />
     <Folder Include="MCAL\EXTI" />
     <Folder Include="MCAL\GIE" />
+    <Folder Include="MCAL\EEPROM" />
+    <Folder Include="MCAL\I2C" />
     <Folder Include="MCAL\SPI" />
     <Folder Include="MCAL\UART" />
     <Folder Include="MCAL\TIMER" />
@@ -193,6 +196,15 @@
     <Compile Include="APP\UART_ECHO_TRY.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="HAL\KeyPad\KeyPad.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\KeyPad\KeyPad.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\KeyPad\KeyPad_Config.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\LCD\LCD.c">
       <SubType>compile</SubType>
     </Compile>
@@ -241,6 +253,18 @@
     <Compile Include="MCAL\DIO\DIO_Types.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\EEPROM\EEPROM.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\EEPROM\EEPROM.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\EEPROM\EEPROM_REG.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\EEPROM\EEPROM_Types.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="MCAL\EXTI\EXTI.c">
       <SubType>compile</SubType>
     </Compile>
@@ -266,6 +290,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="MCAL\GIE\GIE_Types.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\I2C\I2C.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\I2C\I2C.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="MCAL\SPI\SPI.c">
