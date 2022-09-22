@@ -4,10 +4,7 @@
  * Created: 6/25/2022 5:36:26 PM
  *  Author: pc
  */ 
-#include "../../LIB/STD_Types.h"
-#include "DIO_Types.h"
-#include "DIO_Register.h"
-#include "../../LIB/BIT_Math.h"
+
 #include "DIO.h"
 
 void DIO_SetPortDirection(DIO_Port_ID Port_ID,DIO_Direcrion Direction)

@@ -6,7 +6,7 @@
  */ 
 #include "TIMER.h"
 
-static int overflow =0;
+static float overflow =0;
 
 static void(*Timer_CallBackPtr)(void)=NULL;
 void Timer_intialize()
@@ -46,6 +46,7 @@ void TIMER_delay(float delay)
 {
 	Global_Interrupt_Enable();
 	TCCR0_REG|=TIMER_CLK_SELECTOR;
+	delay/=1000;
 	delay*=2*1.5;
 	while(overflow<delay)
 	{

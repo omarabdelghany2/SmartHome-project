@@ -6,6 +6,9 @@
  */ 
 #include"DIO_Types.h"
 #include "../../LIB/STD_Types.h"
+#include "DIO_Types.h"
+#include "DIO_Register.h"
+#include "../../LIB/BIT_Math.h"
 
 
 #ifndef DIO_H_

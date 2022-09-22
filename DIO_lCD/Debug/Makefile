@@ -34,6 +34,7 @@ LINKER_SCRIPT_DEP:=
 # Every subdirectory with source files must be described here
 SUBDIRS :=  \
 ../HAL/LCD \
+../HAL/KeyPad \
 ../HAL/Seven_Segment \
 ../MCAL \
 ../HAL \
@@ -43,6 +44,8 @@ SUBDIRS :=  \
 ../MCAL/ADC \
 ../MCAL/EXTI \
 ../MCAL/GIE \
+../MCAL/EEPROM \
+../MCAL/I2C \
 ../MCAL/SPI \
 ../MCAL/UART \
 ../MCAL/TIMER
@@ -59,13 +62,16 @@ C_SRCS +=  \
 ../APP/Timer0_overflow_interrupt_LAB.c \
 ../APP/Traffic_Light_udacity.c \
 ../APP/UART_ECHO_TRY.c \
+../HAL/KeyPad/KeyPad.c \
 ../HAL/LCD/LCD.c \
 ../HAL/Seven_Segment/Seven_Segment.c \
 ../main.c \
 ../MCAL/ADC/ADC.c \
 ../MCAL/DIO/DIO.c \
+../MCAL/EEPROM/EEPROM.c \
 ../MCAL/EXTI/EXTI.c \
 ../MCAL/GIE/GIE.c \
+../MCAL/I2C/I2C.c \
 ../MCAL/SPI/SPI.c \
 ../MCAL/TIMER/TIMER.c \
 ../MCAL/UART/UART.c
@@ -87,13 +93,16 @@ APP/SPI_TRY.o \
 APP/Timer0_overflow_interrupt_LAB.o \
 APP/Traffic_Light_udacity.o \
 APP/UART_ECHO_TRY.o \
+HAL/KeyPad/KeyPad.o \
 HAL/LCD/LCD.o \
 HAL/Seven_Segment/Seven_Segment.o \
 main.o \
 MCAL/ADC/ADC.o \
 MCAL/DIO/DIO.o \
+MCAL/EEPROM/EEPROM.o \
 MCAL/EXTI/EXTI.o \
 MCAL/GIE/GIE.o \
+MCAL/I2C/I2C.o \
 MCAL/SPI/SPI.o \
 MCAL/TIMER/TIMER.o \
 MCAL/UART/UART.o
@@ -108,13 +117,16 @@ APP/SPI_TRY.o \
 APP/Timer0_overflow_interrupt_LAB.o \
 APP/Traffic_Light_udacity.o \
 APP/UART_ECHO_TRY.o \
+HAL/KeyPad/KeyPad.o \
 HAL/LCD/LCD.o \
 HAL/Seven_Segment/Seven_Segment.o \
 main.o \
 MCAL/ADC/ADC.o \
 MCAL/DIO/DIO.o \
+MCAL/EEPROM/EEPROM.o \
 MCAL/EXTI/EXTI.o \
 MCAL/GIE/GIE.o \
+MCAL/I2C/I2C.o \
 MCAL/SPI/SPI.o \
 MCAL/TIMER/TIMER.o \
 MCAL/UART/UART.o
@@ -129,13 +141,16 @@ APP/SPI_TRY.d \
 APP/Timer0_overflow_interrupt_LAB.d \
 APP/Traffic_Light_udacity.d \
 APP/UART_ECHO_TRY.d \
+HAL/KeyPad/KeyPad.d \
 HAL/LCD/LCD.d \
 HAL/Seven_Segment/Seven_Segment.d \
 main.d \
 MCAL/ADC/ADC.d \
 MCAL/DIO/DIO.d \
+MCAL/EEPROM/EEPROM.d \
 MCAL/EXTI/EXTI.d \
 MCAL/GIE/GIE.d \
+MCAL/I2C/I2C.d \
 MCAL/SPI/SPI.d \
 MCAL/TIMER/TIMER.d \
 MCAL/UART/UART.d
@@ -150,13 +165,16 @@ APP/SPI_TRY.d \
 APP/Timer0_overflow_interrupt_LAB.d \
 APP/Traffic_Light_udacity.d \
 APP/UART_ECHO_TRY.d \
+HAL/KeyPad/KeyPad.d \
 HAL/LCD/LCD.d \
 HAL/Seven_Segment/Seven_Segment.d \
 main.d \
 MCAL/ADC/ADC.d \
 MCAL/DIO/DIO.d \
+MCAL/EEPROM/EEPROM.d \
 MCAL/EXTI/EXTI.d \
 MCAL/GIE/GIE.d \
+MCAL/I2C/I2C.d \
 MCAL/SPI/SPI.d \
 MCAL/TIMER/TIMER.d \
 MCAL/UART/UART.d
@@ -238,6 +256,13 @@ APP/UART_ECHO_TRY.o: ../APP/UART_ECHO_TRY.c
 	@echo Finished building: $<
 	
 
+HAL/KeyPad/KeyPad.o: ../HAL/KeyPad/KeyPad.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 HAL/LCD/LCD.o: ../HAL/LCD/LCD.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
@@ -273,6 +298,13 @@ MCAL/DIO/DIO.o: ../MCAL/DIO/DIO.c
 	@echo Finished building: $<
 	
 
+MCAL/EEPROM/EEPROM.o: ../MCAL/EEPROM/EEPROM.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 MCAL/EXTI/EXTI.o: ../MCAL/EXTI/EXTI.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
@@ -281,6 +313,13 @@ MCAL/EXTI/EXTI.o: ../MCAL/EXTI/EXTI.c
 	
 
 MCAL/GIE/GIE.o: ../MCAL/GIE/GIE.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+MCAL/I2C/I2C.o: ../MCAL/I2C/I2C.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

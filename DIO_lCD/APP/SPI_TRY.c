@@ -18,10 +18,10 @@ void SPI_try()
 	while(1)
 	{
 		SPI_Master_Transmit(0);
-		TIMER_delay(5);
+		TIMER_delay(5000);
 		
 		SPI_Master_Transmit(0xf0);
-		TIMER_delay(5);
+		TIMER_delay(5000);
 		
 		num++;
 	}
