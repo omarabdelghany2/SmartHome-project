@@ -1,85 +1,117 @@
-main.d main.o: .././main.c .././APP/SPI_TRY.h .././APP/../MCAL/SPI/SPI.h \
- .././APP/../MCAL/SPI/../../LIB/BIT_Math.h .././APP/../MCAL/SPI/SPI_REG.h \
- .././APP/../MCAL/SPI/SPI_Types.h .././APP/../MCAL/SPI/SPI_Config.h \
- .././APP/../MCAL/SPI/../DIO/DIO.h \
- .././APP/../MCAL/SPI/../DIO/DIO_Types.h \
- .././APP/../MCAL/SPI/../DIO/../../LIB/STD_Types.h \
- .././APP/../MCAL/SPI/../DIO/DIO_Register.h \
- .././APP/../MCAL/SPI/../DIO/../../LIB/BIT_Math.h \
- .././APP/../MCAL/SPI/../../LIB/STD_Types.h .././HAL/LCD/LCD.h \
- .././HAL/LCD/../../LIB/STD_Types.h .././HAL/KeyPad/KeyPad.h \
- .././HAL/KeyPad/../../MCAL/TIMER/TIMER.h \
- .././HAL/KeyPad/../../MCAL/TIMER/TIMER_Config.h \
- .././HAL/KeyPad/../../MCAL/TIMER/TIMER_Types.h \
- .././HAL/KeyPad/../../MCAL/TIMER/TIMER_Reg.h \
- .././HAL/KeyPad/../../MCAL/TIMER/../../LIB/STD_Types.h \
- .././HAL/KeyPad/KeyPad_Config.h .././HAL/KeyPad/../../MCAL/DIO/DIO.h \
- .././HAL/KeyPad/../../MCAL/DIO/DIO_Types.h \
- .././HAL/KeyPad/../../MCAL/DIO/../../LIB/STD_Types.h \
- .././HAL/KeyPad/../../MCAL/DIO/DIO_Register.h \
- .././HAL/KeyPad/../../MCAL/DIO/../../LIB/BIT_Math.h \
- .././MCAL/EEPROM/EEPROM.h .././MCAL/EEPROM/EEPROM_Types.h \
- .././MCAL/EEPROM/EEPROM_REG.h .././MCAL/EEPROM/../../LIB/STD_Types.h \
- .././LIB/STD_Types.h
+main.d main.o: .././main.c .././APP/SmartHome/SmarHome.h \
+ .././APP/SmartHome/../../MCAL/DIO/DIO.h \
+ .././APP/SmartHome/../../MCAL/DIO/DIO_Types.h \
+ .././APP/SmartHome/../../MCAL/DIO/../../LIB/STD_Types.h \
+ .././APP/SmartHome/../../MCAL/DIO/DIO_Register.h \
+ .././APP/SmartHome/../../MCAL/DIO/../../LIB/BIT_Math.h \
+ .././APP/SmartHome/../../MCAL/ADC/ADC.h \
+ .././APP/SmartHome/../../MCAL/ADC/../../LIB/BIT_Math.h \
+ .././APP/SmartHome/../../MCAL/ADC/../../LIB/STD_Types.h \
+ .././APP/SmartHome/../../MCAL/ADC/ADC_Config.h \
+ .././APP/SmartHome/../../MCAL/ADC/ADC_Types.h \
+ .././APP/SmartHome/../../MCAL/ADC/ADC_Reg.h \
+ .././APP/SmartHome/../../MCAL/SPI/SPI.h \
+ .././APP/SmartHome/../../MCAL/SPI/../../LIB/BIT_Math.h \
+ .././APP/SmartHome/../../MCAL/SPI/SPI_REG.h \
+ .././APP/SmartHome/../../MCAL/SPI/SPI_Types.h \
+ .././APP/SmartHome/../../MCAL/SPI/SPI_Config.h \
+ .././APP/SmartHome/../../MCAL/SPI/../DIO/DIO.h \
+ .././APP/SmartHome/../../MCAL/SPI/../DIO/DIO_Types.h \
+ .././APP/SmartHome/../../MCAL/SPI/../DIO/../../LIB/STD_Types.h \
+ .././APP/SmartHome/../../MCAL/SPI/../DIO/DIO_Register.h \
+ .././APP/SmartHome/../../MCAL/SPI/../DIO/../../LIB/BIT_Math.h \
+ .././APP/SmartHome/../../MCAL/SPI/../../LIB/STD_Types.h \
+ .././APP/SmartHome/../../MCAL/EEPROM/EEPROM.h \
+ .././APP/SmartHome/../../MCAL/EEPROM/EEPROM_Types.h \
+ .././APP/SmartHome/../../MCAL/EEPROM/EEPROM_REG.h \
+ .././APP/SmartHome/../../MCAL/EEPROM/../../LIB/STD_Types.h \
+ .././APP/SmartHome/../../HAL/KeyPad/KeyPad.h \
+ .././APP/SmartHome/../../HAL/KeyPad/../../MCAL/DIO/DIO.h \
+ .././APP/SmartHome/../../HAL/KeyPad/../../MCAL/DIO/DIO_Types.h \
+ .././APP/SmartHome/../../HAL/KeyPad/../../MCAL/DIO/../../LIB/STD_Types.h \
+ .././APP/SmartHome/../../HAL/KeyPad/../../MCAL/DIO/DIO_Register.h \
+ .././APP/SmartHome/../../HAL/KeyPad/../../MCAL/DIO/../../LIB/BIT_Math.h \
+ .././APP/SmartHome/../../HAL/KeyPad/KeyPad_Config.h \
+ .././APP/SmartHome/../../HAL/KeyPad/../../LIB/BIT_Math.h \
+ .././APP/SmartHome/../../HAL/LCD/lCD.h \
+ .././APP/SmartHome/../../HAL/LCD/../../LIB/STD_Types.h \
+ .././APP/SmartHome/../../LIB/BIT_Math.h \
+ .././APP/SmartHome/../../LIB/STD_Types.h
 
-.././APP/SPI_TRY.h:
+.././APP/SmartHome/SmarHome.h:
 
-.././APP/../MCAL/SPI/SPI.h:
+.././APP/SmartHome/../../MCAL/DIO/DIO.h:
 
-.././APP/../MCAL/SPI/../../LIB/BIT_Math.h:
+.././APP/SmartHome/../../MCAL/DIO/DIO_Types.h:
 
-.././APP/../MCAL/SPI/SPI_REG.h:
+.././APP/SmartHome/../../MCAL/DIO/../../LIB/STD_Types.h:
 
-.././APP/../MCAL/SPI/SPI_Types.h:
+.././APP/SmartHome/../../MCAL/DIO/DIO_Register.h:
 
-.././APP/../MCAL/SPI/SPI_Config.h:
+.././APP/SmartHome/../../MCAL/DIO/../../LIB/BIT_Math.h:
 
-.././APP/../MCAL/SPI/../DIO/DIO.h:
+.././APP/SmartHome/../../MCAL/ADC/ADC.h:
 
-.././APP/../MCAL/SPI/../DIO/DIO_Types.h:
+.././APP/SmartHome/../../MCAL/ADC/../../LIB/BIT_Math.h:
 
-.././APP/../MCAL/SPI/../DIO/../../LIB/STD_Types.h:
+.././APP/SmartHome/../../MCAL/ADC/../../LIB/STD_Types.h:
 
-.././APP/../MCAL/SPI/../DIO/DIO_Register.h:
+.././APP/SmartHome/../../MCAL/ADC/ADC_Config.h:
 
-.././APP/../MCAL/SPI/../DIO/../../LIB/BIT_Math.h:
+.././APP/SmartHome/../../MCAL/ADC/ADC_Types.h:
 
-.././APP/../MCAL/SPI/../../LIB/STD_Types.h:
+.././APP/SmartHome/../../MCAL/ADC/ADC_Reg.h:
 
-.././HAL/LCD/LCD.h:
+.././APP/SmartHome/../../MCAL/SPI/SPI.h:
 
-.././HAL/LCD/../../LIB/STD_Types.h:
+.././APP/SmartHome/../../MCAL/SPI/../../LIB/BIT_Math.h:
 
-.././HAL/KeyPad/KeyPad.h:
+.././APP/SmartHome/../../MCAL/SPI/SPI_REG.h:
 
-.././HAL/KeyPad/../../MCAL/TIMER/TIMER.h:
+.././APP/SmartHome/../../MCAL/SPI/SPI_Types.h:
 
-.././HAL/KeyPad/../../MCAL/TIMER/TIMER_Config.h:
+.././APP/SmartHome/../../MCAL/SPI/SPI_Config.h:
 
-.././HAL/KeyPad/../../MCAL/TIMER/TIMER_Types.h:
+.././APP/SmartHome/../../MCAL/SPI/../DIO/DIO.h:
 
-.././HAL/KeyPad/../../MCAL/TIMER/TIMER_Reg.h:
+.././APP/SmartHome/../../MCAL/SPI/../DIO/DIO_Types.h:
 
-.././HAL/KeyPad/../../MCAL/TIMER/../../LIB/STD_Types.h:
+.././APP/SmartHome/../../MCAL/SPI/../DIO/../../LIB/STD_Types.h:
 
-.././HAL/KeyPad/KeyPad_Config.h:
+.././APP/SmartHome/../../MCAL/SPI/../DIO/DIO_Register.h:
 
-.././HAL/KeyPad/../../MCAL/DIO/DIO.h:
+.././APP/SmartHome/../../MCAL/SPI/../DIO/../../LIB/BIT_Math.h:
 
-.././HAL/KeyPad/../../MCAL/DIO/DIO_Types.h:
+.././APP/SmartHome/../../MCAL/SPI/../../LIB/STD_Types.h:
 
-.././HAL/KeyPad/../../MCAL/DIO/../../LIB/STD_Types.h:
+.././APP/SmartHome/../../MCAL/EEPROM/EEPROM.h:
 
-.././HAL/KeyPad/../../MCAL/DIO/DIO_Register.h:
+.././APP/SmartHome/../../MCAL/EEPROM/EEPROM_Types.h:
 
-.././HAL/KeyPad/../../MCAL/DIO/../../LIB/BIT_Math.h:
+.././APP/SmartHome/../../MCAL/EEPROM/EEPROM_REG.h:
 
-.././MCAL/EEPROM/EEPROM.h:
+.././APP/SmartHome/../../MCAL/EEPROM/../../LIB/STD_Types.h:
 
-.././MCAL/EEPROM/EEPROM_Types.h:
+.././APP/SmartHome/../../HAL/KeyPad/KeyPad.h:
 
-.././MCAL/EEPROM/EEPROM_REG.h:
+.././APP/SmartHome/../../HAL/KeyPad/../../MCAL/DIO/DIO.h:
 
-.././MCAL/EEPROM/../../LIB/STD_Types.h:
+.././APP/SmartHome/../../HAL/KeyPad/../../MCAL/DIO/DIO_Types.h:
 
-.././LIB/STD_Types.h:
+.././APP/SmartHome/../../HAL/KeyPad/../../MCAL/DIO/../../LIB/STD_Types.h:
+
+.././APP/SmartHome/../../HAL/KeyPad/../../MCAL/DIO/DIO_Register.h:
+
+.././APP/SmartHome/../../HAL/KeyPad/../../MCAL/DIO/../../LIB/BIT_Math.h:
+
+.././APP/SmartHome/../../HAL/KeyPad/KeyPad_Config.h:
+
+.././APP/SmartHome/../../HAL/KeyPad/../../LIB/BIT_Math.h:
+
+.././APP/SmartHome/../../HAL/LCD/lCD.h:
+
+.././APP/SmartHome/../../HAL/LCD/../../LIB/STD_Types.h:
+
+.././APP/SmartHome/../../LIB/BIT_Math.h:
+
+.././APP/SmartHome/../../LIB/STD_Types.h:

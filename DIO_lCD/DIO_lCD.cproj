@@ -133,6 +133,7 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Folder Include="APP\SmartHome" />
     <Folder Include="HAL\LCD" />
     <Folder Include="HAL\KeyPad" />
     <Folder Include="HAL\Seven_Segment" />
@@ -170,6 +171,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="APP\Seven_Segment.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APP\SmartHome\SmarHome.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APP\SmartHome\SmartHome.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="APP\SPI_TRY.c">

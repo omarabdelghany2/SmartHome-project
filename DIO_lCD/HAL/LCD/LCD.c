@@ -133,23 +133,10 @@ void LCD_WriteString(char *Str,uint8 Row,uint8 Column)
 {	uint8 Index=0;//for the curser indexing
 	uint8 Line0=0;//for row indexing
 	LCD_GoToPos(Row,Column);
-	while ((Str[Index]!='\0')&&((Row*16)+Index+Column)<32)//while ends by ending of string
+	uint8 chars_iterator;
+	for (chars_iterator=0;Str[chars_iterator]!='\0';chars_iterator++)//while ends by ending of string
 	{
-		if (((Row*16)+Index+Column)<16)//for the first row indexing
-		{
-			LCD_WriteData(Str[Index]);
-			Index++;
-		}
-		else if((((Row*16)+Index+Column)==16))//for the end of first row indexing and going to the second
-		{
-			LCD_GoToPos(1,0);
-			Line0=1;
-		}
-		else if(((Row*16)+Index+Column)<32&&Line0==1)//for the second row indexing
-		{
-			LCD_WriteData(Str[Index]);
-			Index++;
-		}
+		LCD_WriteData(Str[chars_iterator]);
 	}
 }
 
