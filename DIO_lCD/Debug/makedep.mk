@@ -12,6 +12,8 @@ APP\LCD_Lab.c
 
 APP\Seven_Segment.c
 
+APP\SmartHome\SmartHome.c
+
 APP\SPI_TRY.c
 
 APP\Timer0_overflow_interrupt_LAB.c
