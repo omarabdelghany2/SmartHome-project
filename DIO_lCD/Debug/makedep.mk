@@ -12,7 +12,9 @@ APP\LCD_Lab.c
 
 APP\Seven_Segment.c
 
-APP\SmartHome\SmartHome.c
+APP\SmartHome\SmartHome_Master.c
+
+APP\SmartHome\SmartHome_Slave.c
 
 APP\SPI_TRY.c
 

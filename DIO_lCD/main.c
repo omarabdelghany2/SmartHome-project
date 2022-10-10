@@ -6,9 +6,12 @@
  */ 
 
 
-#include "APP/SmartHome/SmarHome.h"
+#include "APP/SmartHome/SmartHome_Master.h"
+#include "APP/SmartHome/SmartHome_Slave.h"
+#include "APP/SPI_TRY.h"
 
 int main()
 {
-SmartHome_App_Start();
+	//SPI_try();
+SmartHome_App_Start_Slave();
 }

@@ -173,10 +173,16 @@
     <Compile Include="APP\Seven_Segment.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="APP\SmartHome\SmarHome.h">
+    <Compile Include="APP\SmartHome\SmartHome_Master.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="APP\SmartHome\SmartHome.c">
+    <Compile Include="APP\SmartHome\SmartHome_Master.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APP\SmartHome\SmartHome_Slave.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APP\SmartHome\SmartHome_Slave.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="APP\SPI_TRY.c">

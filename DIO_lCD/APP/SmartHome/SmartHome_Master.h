@@ -25,7 +25,11 @@ void SmartHome_App_Start();
 
 #define ADMIN  '1'
 #define GUEST  '2'
-
-
+void SmartHome_App_Start_Master();
+void SetPassword();
+int EnterPassword();
+int SelectMode();
+void Guest_Mode();
+void ADMIN_Mode();
 
 #endif /* SMARHOME_H_ */

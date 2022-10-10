@@ -59,7 +59,8 @@ C_SRCS +=  \
 ../APP/EXTI_LAB.c \
 ../APP/LCD_Lab.c \
 ../APP/Seven_Segment.c \
-../APP/SmartHome/SmartHome.c \
+../APP/SmartHome/SmartHome_Master.c \
+../APP/SmartHome/SmartHome_Slave.c \
 ../APP/SPI_TRY.c \
 ../APP/Timer0_overflow_interrupt_LAB.c \
 ../APP/Traffic_Light_udacity.c \
@@ -91,7 +92,8 @@ APP/ADC_LAB.o \
 APP/EXTI_LAB.o \
 APP/LCD_Lab.o \
 APP/Seven_Segment.o \
-APP/SmartHome/SmartHome.o \
+APP/SmartHome/SmartHome_Master.o \
+APP/SmartHome/SmartHome_Slave.o \
 APP/SPI_TRY.o \
 APP/Timer0_overflow_interrupt_LAB.o \
 APP/Traffic_Light_udacity.o \
@@ -116,7 +118,8 @@ APP/ADC_LAB.o \
 APP/EXTI_LAB.o \
 APP/LCD_Lab.o \
 APP/Seven_Segment.o \
-APP/SmartHome/SmartHome.o \
+APP/SmartHome/SmartHome_Master.o \
+APP/SmartHome/SmartHome_Slave.o \
 APP/SPI_TRY.o \
 APP/Timer0_overflow_interrupt_LAB.o \
 APP/Traffic_Light_udacity.o \
@@ -141,7 +144,8 @@ APP/ADC_LAB.d \
 APP/EXTI_LAB.d \
 APP/LCD_Lab.d \
 APP/Seven_Segment.d \
-APP/SmartHome/SmartHome.d \
+APP/SmartHome/SmartHome_Master.d \
+APP/SmartHome/SmartHome_Slave.d \
 APP/SPI_TRY.d \
 APP/Timer0_overflow_interrupt_LAB.d \
 APP/Traffic_Light_udacity.d \
@@ -166,7 +170,8 @@ APP/ADC_LAB.d \
 APP/EXTI_LAB.d \
 APP/LCD_Lab.d \
 APP/Seven_Segment.d \
-APP/SmartHome/SmartHome.d \
+APP/SmartHome/SmartHome_Master.d \
+APP/SmartHome/SmartHome_Slave.d \
 APP/SPI_TRY.d \
 APP/Timer0_overflow_interrupt_LAB.d \
 APP/Traffic_Light_udacity.d \
@@ -234,7 +239,14 @@ APP/Seven_Segment.o: ../APP/Seven_Segment.c
 	@echo Finished building: $<
 	
 
-APP/SmartHome/SmartHome.o: ../APP/SmartHome/SmartHome.c
+APP/SmartHome/SmartHome_Master.o: ../APP/SmartHome/SmartHome_Master.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+APP/SmartHome/SmartHome_Slave.o: ../APP/SmartHome/SmartHome_Slave.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

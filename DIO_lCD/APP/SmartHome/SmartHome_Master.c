@@ -5,54 +5,70 @@
  *  Author: pc
  */ 
 #define F_CPU   1000000 
-#include "SmarHome.h"
+#include "SmartHome_Master.h"
 #include "avr/delay.h"
-void SmartHome_App_Start()
+void SmartHome_App_Start_Master()
 {
+
+	SPI_Master_Intialize();	
 	Keypad_init();
 	LCD_Intialize();
 	DIO_SetPinDirection(PORTD,0,Output);
 	DIO_SetPinDirection(PORTD,1,Output);
 	DIO_SetPinDirection(PORTD,2,Output);
 	
-	
-	 uint8 Readed = EEPROM_Read(4);
-	 
-	 if(Readed!='S')//so its the first time to run
-	 {
-		 SetPassword();
-	 }
-	 else //so lets take password from user
-	 {
-		int returned =EnterPassword();
-		if(returned==1)
-			{	
-				_delay_ms(1000);
-				LCD_WriteCmd(0x01);
-				LCD_WriteString("wait20second",0,0);
-				_delay_ms(20000);
-				returned=EnterPassword();
-			}
-			
+	//LETS SELECT MODE
+		uint8 mode =SelectMode();
 		
-	 }		
+		if(mode==ADMIN)
+		{
+			
+				 uint8 Readed = EEPROM_Read(4);
+				 
+				 
+				 
+				 if(Readed!='S')//so its the first time to run
+				 {
+					 SetPassword();
+					 
+				 }
+				 else //so lets take password from user
+				 {
+					 
+					 int returned =EnterPassword();
+					 
+					 
+					 while(returned==1)
+					 {
+						 _delay_ms(1000);
+						 LCD_WriteCmd(0x01);
+						 LCD_WriteString("wait20second",0,0);
+						 _delay_ms(20000);
+						 returned=EnterPassword();
+					 }
+					 
+					 
+				 }
+			ADMIN_Mode();
+		}
+		else
+		{
+			
+			Guest_Mode();
+		}
+	
+	
+	
+	
 	 
 	 //lets choose the mode (ADMIN or GUEST)/////////*///////////////*
-	uint8 mode =SelectMode();
-	
-	if(mode==ADMIN)
-	{
-	   ADMIN_Mode();	
-	}
-	else
-	{
-		Guest_Mode();
-	}
+
 	 
 	 
 }
 void SetPassword()
 {
+	LCD_WriteCmd(0X01);
 	LCD_WriteString("Set ADMIN Pass",0,0);
 	LCD_GoToPos(1,0);
 	//reading the password from the user
@@ -80,6 +96,7 @@ void SetPassword()
 int EnterPassword()
 {
 	 int pass_status= 1;
+	 LCD_WriteCmd(0x01);
 	 LCD_WriteString("enter your pass",0,0);
 	 LCD_GoToPos(1,0);
 	 uint8 keypad_reading=NO_KEY_PRESSED;
@@ -97,7 +114,7 @@ int EnterPassword()
 				 {
 					 LCD_WriteData(keypad_reading);
 					 if(keypad_reading!=EEPROM_Read(i))
-					 pass_status=0;
+						pass_status=0;
 					 break;
 				 }
 			 }
@@ -156,7 +173,8 @@ void Guest_Mode()
 		DIO_SetPinValue(PORTD,0,LOW);
 		DIO_SetPinValue(PORTD,1,HIGH);
 		DIO_SetPinValue(PORTD,2,LOW);
-		
+									
+
 		LCD_WriteCmd(0x01);
 		LCD_WriteString("1)ROOM1 2)ROOM2",0,0);
 		LCD_WriteString("3)ROOM34)ROOM4",1,0);
@@ -177,7 +195,7 @@ void Guest_Mode()
 				case '1': 
 					LCD_WriteCmd(0x01);
 					LCD_WriteString("ROOM1 :1)ON",0,0);
-					LCD_WriteString("2)OFF3)RET",1,0);
+					LCD_WriteString("2)OFF 3)RET",1,0);
 					while(1)
 					{
 						
@@ -192,14 +210,25 @@ void Guest_Mode()
 					
 						if(keypad_reading=='1')
 						{
-							//SEND ON
+							//will send 1 for room 1 and and O for ON
+							SPI_Master_Transmit(1);
+							SPI_Master_Transmit('N');
+						
+							Guest_Mode();
+						
 						}	
 						else if (keypad_reading=='2')	
 						{
-							//send off
+							SPI_Master_Transmit(1);
+							SPI_Master_Transmit('F');
+							
+							Guest_Mode();
+							
 						}	
 						else
 						{
+							//SPI_Master_Transmit(0);
+							
 							Guest_Mode();
 						}	
 					break;
@@ -221,11 +250,18 @@ void Guest_Mode()
 					
 					if(keypad_reading=='1')
 					{
-						//SEND ON to the room2
+							SPI_Master_Transmit(2);
+							SPI_Master_Transmit('N');
+							
+							Guest_Mode();
+							
 					}
 					else if (keypad_reading=='2')
 					{
-						//send off to the room2
+							SPI_Master_Transmit(2);
+							SPI_Master_Transmit('F');
+						
+							Guest_Mode();
 					}
 					else
 					{
@@ -251,11 +287,17 @@ void Guest_Mode()
 					
 					if(keypad_reading=='1')
 					{
-						//SEND ON to the room 3
+							SPI_Master_Transmit(3);
+							SPI_Master_Transmit('N');
+							
+							Guest_Mode();
 					}
 					else if (keypad_reading=='2')
 					{
-						//send off to the room 3
+							SPI_Master_Transmit(3);
+							SPI_Master_Transmit('F');
+							
+							Guest_Mode();
 					}
 					else
 					{
@@ -282,11 +324,17 @@ void Guest_Mode()
 					
 					if(keypad_reading=='1')
 					{
-						//SEND ON to the room 4
+							SPI_Master_Transmit(4);
+							SPI_Master_Transmit('N');
+							
+							Guest_Mode();
 					}
 					else if (keypad_reading=='2')
 					{
-						//send off to the room 4
+							SPI_Master_Transmit(4);
+							SPI_Master_Transmit('F');
+							
+							Guest_Mode();
 					}
 					else
 					{
@@ -339,12 +387,16 @@ void ADMIN_Mode()
 			
 			if(keypad_reading=='1')
 			{
-				//SEND ON
+			SPI_Master_Transmit(1);
+		    SPI_Master_Transmit('N');
+		
 				ADMIN_Mode();
 			}
 			else if (keypad_reading=='2')
 			{
-				//send off
+			SPI_Master_Transmit(1);
+			SPI_Master_Transmit('F');
+		
 				ADMIN_Mode();
 			}
 			else
@@ -370,12 +422,16 @@ void ADMIN_Mode()
 			
 			if(keypad_reading=='1')
 			{
-				//SEND ON to the room2
+			SPI_Master_Transmit(2);
+			SPI_Master_Transmit('N');
+			
 				ADMIN_Mode();
 			}
 			else if (keypad_reading=='2')
 			{
-				//send off to the room2
+			SPI_Master_Transmit(2);
+			SPI_Master_Transmit('F');
+		
 				ADMIN_Mode();
 			}
 			else
@@ -402,12 +458,16 @@ void ADMIN_Mode()
 			
 			if(keypad_reading=='1')
 			{
-				//SEND ON to the room 3
+			SPI_Master_Transmit(3);
+			SPI_Master_Transmit('N');
+		
 				ADMIN_Mode();
 			}
 			else if (keypad_reading=='2')
 			{
-				//send off to the room 3
+			SPI_Master_Transmit(3);
+			SPI_Master_Transmit('F');
+			
 				ADMIN_Mode();
 			}
 			else
@@ -420,8 +480,8 @@ void ADMIN_Mode()
 			LCD_WriteCmd(0x01);
 		    LCD_WriteString("1)ROOM4 2)TV ",0,0);
 		    LCD_WriteString("3)COND 4)RET",1,0);
-				while(1)
-				{
+		while(1)
+			{
 					
 					keypad_reading  = Keypad_read(ONE_PRESS);
 					if (keypad_reading != NO_KEY_PRESSED)
@@ -430,7 +490,7 @@ void ADMIN_Mode()
 						break;
 					}
 
-				}
+			}
 			switch(keypad_reading)//MORE
 			{
 				case '1' :
@@ -451,12 +511,16 @@ void ADMIN_Mode()
 				
 				if(keypad_reading=='1')
 				{
-					//SEND ON to the room 4
+			SPI_Master_Transmit(4);
+			SPI_Master_Transmit('N');
+			
 					ADMIN_Mode();
 				}
 				else if (keypad_reading=='2')
 				{
-					//send off to the room 4
+			SPI_Master_Transmit(4);
+			SPI_Master_Transmit('F');
+			
 					ADMIN_Mode();
 				}
 				else
@@ -484,12 +548,16 @@ void ADMIN_Mode()
 				
 				if(keypad_reading=='1')
 				{
-					//SEND ON to the TV
+			SPI_Master_Transmit(5);
+			SPI_Master_Transmit('N');
+			
 					ADMIN_Mode();
 				}
 				else if (keypad_reading=='2')
 				{
-					//send off to the TV
+			SPI_Master_Transmit(5);
+			SPI_Master_Transmit('F');
+			
 					ADMIN_Mode();
 				}
 				else
@@ -518,6 +586,8 @@ void ADMIN_Mode()
 					case '1' :
 					LCD_WriteCmd(0x01);
 					LCD_WriteString("SET TEMP :",0,0);
+					SPI_Master_Transmit(6);
+					SPI_Master_Transmit('S');
 					for(int i=0;i<2;i++)
 					{
 						while(1)
@@ -527,6 +597,8 @@ void ADMIN_Mode()
 							if (keypad_reading != NO_KEY_PRESSED)
 							{
 								LCD_WriteData(keypad_reading);
+						//send (keypad reading by SPI)
+						SPI_Master_Transmit(keypad_reading);								
 								keypad_reading=NO_KEY_PRESSED;
 								break;
 							}
@@ -537,8 +609,9 @@ void ADMIN_Mode()
 						LCD_WriteData(keypad_reading);
 						_delay_ms(500);
 						
-						//send (keypad reading by SPI)
+
 					}
+					
 					break;
 					case '2':
 					LCD_WriteCmd(0x01);
@@ -558,9 +631,17 @@ void ADMIN_Mode()
 					}
 					if(keypad_reading=='1')
 					{//send ON to cond
+						SPI_Master_Transmit(6);
+						SPI_Master_Transmit('C');
+						SPI_Master_Transmit('N');
+					
 					}
 					else if(keypad_reading=='2')
 					{//send off to cond
+						SPI_Master_Transmit(6);
+						SPI_Master_Transmit('C');
+						SPI_Master_Transmit('F');
+										
 					}
 					else
 					ADMIN_Mode();
