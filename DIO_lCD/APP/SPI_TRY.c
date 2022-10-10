@@ -20,7 +20,7 @@ void SPI_try()
 		SPI_Master_Transmit(0);
 		TIMER_delay(5000);
 		
-		SPI_Master_Transmit(0xf0);
+		SPI_Master_Transmit(1);
 		TIMER_delay(5000);
 		
 		num++;
