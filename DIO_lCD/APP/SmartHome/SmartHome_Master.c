@@ -607,7 +607,7 @@ void ADMIN_Mode()
 						}
 						LCD_GoToPos(11-i,0);
 						LCD_WriteData(keypad_reading);
-						_delay_ms(500);
+						
 						
 
 					}
@@ -615,6 +615,8 @@ void ADMIN_Mode()
 					break;
 					case '2':
 					LCD_WriteCmd(0x01);
+					SPI_Master_Transmit(6);
+					SPI_Master_Transmit('C');								
 					LCD_WriteString("1)ON, 2)OFF",0,0);
 					LCD_WriteString("3)RET",1,0);
 					while(1)
@@ -631,8 +633,7 @@ void ADMIN_Mode()
 					}
 					if(keypad_reading=='1')
 					{//send ON to cond
-						SPI_Master_Transmit(6);
-						SPI_Master_Transmit('C');
+
 						SPI_Master_Transmit('N');
 					
 					}
