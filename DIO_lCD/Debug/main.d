@@ -37,8 +37,7 @@ main.d main.o: .././main.c .././APP/SmartHome/SmartHome_Master.h \
  .././APP/SmartHome/../../HAL/LCD/../../LIB/STD_Types.h \
  .././APP/SmartHome/../../LIB/BIT_Math.h \
  .././APP/SmartHome/../../LIB/STD_Types.h \
- .././APP/SmartHome/SmartHome_Slave.h .././APP/SPI_TRY.h \
- .././APP/../MCAL/SPI/SPI.h
+ .././APP/SmartHome/SmartHome_Slave.h
 
 .././APP/SmartHome/SmartHome_Master.h:
 
@@ -119,7 +118,3 @@ main.d main.o: .././main.c .././APP/SmartHome/SmartHome_Master.h \
 .././APP/SmartHome/../../LIB/STD_Types.h:
 
 .././APP/SmartHome/SmartHome_Slave.h:
-
-.././APP/SPI_TRY.h:
-
-.././APP/../MCAL/SPI/SPI.h:

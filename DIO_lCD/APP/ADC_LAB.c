@@ -24,9 +24,9 @@ void ADC_LAB()
 	
 	DIO_SetPinDirection(PORTA,potent,Input);
 	DIO_SetPinDirection(PORTA,button,Input);
-		char StringResult[10];
 		
-	
+		
+	char StringResult[10];
 	ADC_Intialize();
 	while(1)
 	{
