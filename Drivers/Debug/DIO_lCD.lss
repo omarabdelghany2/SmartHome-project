@@ -311,6 +311,7 @@ void SmartHome_App_Start_Slave()
 					
 					Recieved=SPI_Slave_Recieve();
  1c4:	0e 94 65 03 	call	0x6ca	; 0x6ca <SPI_Slave_Recieve>
+					
 					Set_temp=(Recieved-'0')*10;
  1c8:	c8 2f       	mov	r28, r24
  1ca:	d0 e0       	ldi	r29, 0x00	; 0
