@@ -100,6 +100,7 @@ void SmartHome_App_Start_Slave()
 			{
 					
 					Recieved=SPI_Slave_Recieve();
+					
 					Set_temp=(Recieved-'0')*10;
 					Recieved=SPI_Slave_Recieve();
 					Set_temp+=(Recieved-'0');	
